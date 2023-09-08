@@ -6,7 +6,6 @@ function Add({ employees, setEmployees, setIsAdding }) {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
-    const [salary, setSalary] = useState('');
     const [date, setdate] = useState('');
 
     const textInput = useRef(null);
@@ -17,7 +16,7 @@ function Add({ employees, setEmployees, setIsAdding }) {
 
     const handleAdd = e => {
         e.preventDefault();
-        if (!firstName || !lastName || !email || !salary || !date) {
+        if (!firstName || !lastName || !email || !date) {
             return Swal.fire({
                 icon: 'error',
                 title: 'Error!',
@@ -32,7 +31,7 @@ function Add({ employees, setEmployees, setIsAdding }) {
             firstName,
             lastName,
             email,
-            salary,
+           
             date
         }
         employees.push(newEmployee);
@@ -78,14 +77,7 @@ function Add({ employees, setEmployees, setIsAdding }) {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
-                <label htmlFor="salary">Salary ($)</label>
-                <input
-                    id="salary"
-                    type="number"
-                    name="salary"
-                    value={salary}
-                    onChange={e => setSalary(e.target.value)}
-                />
+               
                 <label htmlFor="date">date</label>
                 <input
                     id="date"

@@ -63,6 +63,7 @@ function Dashboard() {
                     />
                 </>
             )}
+            
             {/* Add */}
             {isAdding && (
                 <Add
@@ -71,7 +72,9 @@ function Dashboard() {
                     setIsAdding={setIsAdding}
                 />
             )}
-            {/* Edit */}
+
+
+            {/* /* Edit */ }
             {isEditing && (
                 <Edit
                     employees={employees}

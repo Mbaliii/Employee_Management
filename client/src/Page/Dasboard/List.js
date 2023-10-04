@@ -17,7 +17,9 @@ function List({ employees, handleEdit, handleDelete }) {
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
-                        {/* <th>Salary</th> */}
+                        <th>Position</th>
+                        <th>Contact</th>
+                        <th>Bio</th>
                         <th>Date</th>
                         <th colSpan={2} className="text-center">
                             Actions
@@ -32,23 +34,20 @@ function List({ employees, handleEdit, handleDelete }) {
                                 <td>{employee.firstName}</td>
                                 <td>{employee.lastName}</td>
                                 <td>{employee.email}</td>
-                                {/* <td>{formatter.format(employee.salary)}</td> */}
+                                <td>{employee.position}</td>
+                                <td>{employee.contact}</td>
+                                <td>{employee.bio}</td>
                                 <td>{employee.date} </td>
                                 <td className="text-right">
                                     <button
                                         onClick={() => handleEdit(employee.id)}
-                                        className="button muted-button"
-                                    >
-                                        Edit
-                                    </button>
+                                        className="button muted-button" > Edit  </button>   
                                 </td>
+
+
                                 <td className="text-left">
-                                    <button
-                                        onClick={() => handleDelete(employee.id)}
-                                        className="button muted-button"
-                                    >
-                                        Delete
-                                    </button>
+                                    <button onClick={() => handleDelete(employee.id)} className="button muted-button" >
+                                        Delete </button>
                                 </td>
                             </tr>
                         ))

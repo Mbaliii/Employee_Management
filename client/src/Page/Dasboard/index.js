@@ -50,7 +50,7 @@ function Dashboard() {
 
     return (
         <div className='container'>
-            {/* List */}
+           
             {!isAdding && !isEditing && (
                 <>
                     <Header
@@ -64,7 +64,7 @@ function Dashboard() {
                 </>
             )}
             
-            {/* Add */}
+            
             {isAdding && (
                 <Add
                     employees={employees}
@@ -74,7 +74,7 @@ function Dashboard() {
             )}
 
 
-            {/* /* Edit */ }
+            
             {isEditing && (
                 <Edit
                     employees={employees}

@@ -7,6 +7,9 @@ function Add({ employees, setEmployees, setIsAdding }) {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [date, setdate] = useState('');
+    const [bio, setbio] = useState('')
+    const [position, setPosition] = useState('');
+    const [contact, setContact] = useState('');
 
     const textInput = useRef(null);
 
@@ -16,7 +19,7 @@ function Add({ employees, setEmployees, setIsAdding }) {
 
     const handleAdd = e => {
         e.preventDefault();
-        if (!firstName || !lastName || !email || !date) {
+        if (!firstName || !lastName || !email || !bio || !date || !position || !contact) {
             return Swal.fire({
                 icon: 'error',
                 title: 'Error!',
@@ -31,8 +34,10 @@ function Add({ employees, setEmployees, setIsAdding }) {
             firstName,
             lastName,
             email,
-           
-            date
+            bio,
+            date,
+            position,
+            contact
         }
         employees.push(newEmployee);
         setEmployees(employees);
@@ -53,14 +58,10 @@ function Add({ employees, setEmployees, setIsAdding }) {
             <form onSubmit={handleAdd}>
                 <h1>Add Employee</h1>
                 <label htmlFor="firstName">First Name</label>
-                <input
-                    id="firstName"
-                    type="text"
-                    ref={textInput}
-                    name="firstName"
-                    value={firstName}
-                    onChange={e => setFirstName(e.target.value)}
-                />
+                <input id="firstName" type="text" ref={textInput}
+                    name="firstName" value={firstName} onChange={e => setFirstName(e.target.value)} />
+
+
                 <label htmlFor="lastName">Last Name</label>
                 <input
                     id="lastName"
@@ -69,15 +70,51 @@ function Add({ employees, setEmployees, setIsAdding }) {
                     value={lastName}
                     onChange={e => setLastName(e.target.value)}
                 />
+
+                <label htmlFor="lastName">Last Name</label>
+                <input
+                    id="lastName"
+                    type="text"
+                    name="lastName"
+                    value={lastName}
+                    onChange={e => setLastName(e.target.value)}
+                />
+
+
+                <label htmlFor="bio">Bio</label>
+                <input
+                    id="bio"
+                    type="text"
+                    name="bio"
+                    value={bio}
+                    onChange={e => setbio(e.target.value)}
+                />
                 <label htmlFor="email">Email</label>
                 <input
                     id="email"
-                    type="email"
+                    type="text"
                     name="email"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
-               
+
+                <label htmlFor="contact">Contact</label>
+                <input
+                    id="contact"
+                    type="text"
+                    name="contact"
+                    value={contact}
+                    onChange={e => setContact(e.target.value)}
+                />
+                <label htmlFor="position">Position</label>
+                <input
+                    id="position"
+                    type="text"
+                    name="position"
+                    value={position}
+                    onChange={e => setPosition(e.target.value)}
+                />
+
                 <label htmlFor="date">date</label>
                 <input
                     id="date"
@@ -86,6 +123,8 @@ function Add({ employees, setEmployees, setIsAdding }) {
                     value={date}
                     onChange={e => setdate(e.target.value)}
                 />
+
+
                 <div style={{ marginTop: '30px' }}>
                     <input type="submit" value="Add" />
                     <input

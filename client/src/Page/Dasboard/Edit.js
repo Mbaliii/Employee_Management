@@ -7,6 +7,7 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
 
     const [firstName, setFirstName] = useState(selectedEmployee.firstName);
     const [lastName, setLastName] = useState(selectedEmployee.lastName);
+    const [bio, setBio] = useState(selectedEmployee.bio);
     const [email, setEmail] = useState(selectedEmployee.email);
     const [date, setDate] = useState(selectedEmployee.date);
 
@@ -27,7 +28,7 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
             firstName,
             lastName,
             email,
-            
+            bio,
             date
         };
 
@@ -70,6 +71,13 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
                     value={lastName}
                     onChange={e => setLastName(e.target.value)}
                 />
+                <input
+                    id="bio"
+                    type="text"
+                    name="bio"
+                    value={bio}
+                    onChange={e => setBio(e.target.value)}
+                />
                 <label htmlFor="email">Email</label>
                 <input
                     id="email"
@@ -78,7 +86,7 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
-                
+
                 <label htmlFor="date">Date</label>
                 <input
                     id="date"
